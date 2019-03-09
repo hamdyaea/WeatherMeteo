@@ -13,11 +13,11 @@ It use https://wttr.in/ look at https://wttr.in/:help for more information about
 
 ## Language selection
 
-![Screenshot](screenshot1.png)
+![Screenshot](screenshot2.png)
 
 ## Enter a location
 
-![Screenshot](screenshot2.png)
+![Screenshot](screenshot1.png)
 
 ## What you need to make it work :  
 
