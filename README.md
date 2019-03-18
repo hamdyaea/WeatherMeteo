@@ -43,6 +43,13 @@ sudo pip3 install wget
 python3 meteo.py
 ```  
 
+## Requirements :
+
+If you miss a module, install it pip install module-name.
+
+Your user must have read and write access on the current running 
+directory.
+
 ## Developer - Author
 
 Hamdy Abou El Anein
