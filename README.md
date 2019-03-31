@@ -37,6 +37,13 @@ You need wget for python 3:
 sudo pip3 install wget
 ```
 
+You need unidecode for python 3:
+
+
+```sh
+sudo pip3 install unidecode
+```
+
 ## How to launch this software :  
 
 ```sh
