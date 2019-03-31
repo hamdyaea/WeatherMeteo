@@ -7,8 +7,9 @@
 
 
 import wget
-from easygui import *
-
+from easygui import *  # sudo pip3 install pillow if needed and easygui
+import unidecode  #sudo pip3 install unidecode
+import os
 
 # Weather result
 
@@ -18,10 +19,11 @@ def weather():
         city = "Bern"
     elif city == "":
         city = "Bern"
-    url = (("http://wttr.in/")+str(city)+str("_Fp_lang=")+str(lng)+str(".png"))
+    unaccent_city = unidecode.unidecode(city) #remove accent and all non-ascii characters
+    url = (("http://wttr.in/")+str(unaccent_city)+str("_Fp_lang=")+str(lng)+str(".png"))
     filename = wget.download(url,out="meteo.png")
 
-    image = 'meteo 1.png'
+    image = 'meteo.png'
     msg = "This is the weather report for this location"
     choices = ["Change city"]
     reply = buttonbox(msg, image=image, choices=choices)
@@ -32,6 +34,13 @@ def weather():
 
 def location():
     global city
+
+    filePath = "meteo.png"
+
+    if os.path.exists(filePath):
+        os.remove(filePath)
+    else:
+        print("")
     msg = "Enter a city or a location\n\nBy defautl it's Bern - Switzerland"
     title = "Location"
     default = "Bern"
@@ -76,5 +85,6 @@ def language():
         lng = "en"  # Default is english
 
     location()
+
 
 language()
