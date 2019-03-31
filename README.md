@@ -11,6 +11,15 @@
 This python 3 software show you a weather report. 
 It use https://wttr.in/ look at https://wttr.in/:help for more information about it.
 
+
+## Download the Windows .exe version :
+
+You can run it with Python 3 and the right libraries or for Windows you can use the .exe software that I created there :
+
+[![Download Weather-Meteo-Worldwide](https://img.shields.io/sourceforge/dm/weather-meteo-worldwide.svg)](https://sourceforge.net/projects/weather-meteo-worldwide/files/latest/download)
+[![Download Weather-Meteo-Worldwide](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/weather-meteo-worldwide/files/latest/download)
+
+
 ## Language selection
 
 ![Screenshot](screenshot2.png)
