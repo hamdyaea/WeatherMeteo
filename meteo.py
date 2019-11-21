@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 # Developer : Hamdy Abou El Anein
 
@@ -13,29 +13,38 @@ import os
 
 # Weather result
 
+# class creation
+class Weather:
+    def __init__(self):
+        self.city = "Bern"
+        self.unnaccent_city = "Bern"
+        self.lng = "German"
+        self.url = "http://wttr.in/"
+        self.filePath = ""
+        self.image = "meteo.png"
+
 
 def weather():
-    global city
-    if city == None:  # if nothing the default city is Bern
-        city = "Bern"
-    elif city == "":
-        city = "Bern"
-    unaccent_city = unidecode.unidecode(
-        city
+    if Weather.city == None:  # if nothing the default city is Bern
+        Weather.city = "Bern"
+    elif Weather.city == "":
+        Weather.city = "Bern"
+    Weather.unaccent_city = unidecode.unidecode(
+        Weather.city
     )  # remove accent and all non-ascii characters
-    url = (
+    Weather.url = (
         ("http://wttr.in/")
-        + str(unaccent_city)
+        + str(Weather.unaccent_city)
         + str("_Fp_lang=")
-        + str(lng)
+        + str(Weather.lng)
         + str(".png")
     )
-    filename = wget.download(url, out="meteo.png")
+    filename = wget.download(Weather.url, out="meteo.png")
 
-    image = "meteo.png"
+    Weather.image = "meteo.png"
     msg = "This is the weather report for this location"
     choices = ["Change city"]
-    reply = buttonbox(msg, image=image, choices=choices)
+    reply = buttonbox(msg, image=Weather.image, choices=choices)
     if reply == "Change city":
         location()
 
@@ -44,28 +53,25 @@ def weather():
 
 
 def location():
-    global city
+    Weather.filePath = "meteo.png"
 
-    filePath = "meteo.png"
-
-    if os.path.exists(filePath):
-        os.remove(filePath)
+    if os.path.exists(Weather.filePath):
+        os.remove(Weather.filePath)
     else:
         print("")
     msg = "Enter a city or a location\n\nBy defautl it's Bern - Switzerland"
     title = "Location"
     default = "Bern"
-    city = enterbox(msg, title, default)
-    if city == None:  # if nothing the default city is Bern
-        city == "Bern"
-    elif city == "":
-        city = "Bern"
+    Weather.city = enterbox(msg, title, default)
+    if Weather.city == None:  # if nothing the default city is Bern
+        Weather.city == "Bern"
+    elif Weather.city == "":
+        Weather.city = "Bern"
     weather()
 
 
 # Language selection
 def language():
-    global lng
     msg = "What is your language ?"
     title = "Languages"
     choices = [
@@ -84,29 +90,29 @@ def language():
     choice = choicebox(msg, title, choices)
 
     if choice == "Afrikaans":
-        lng = "af"
+        Weather.lng = "af"
     elif choice == "Danish":
-        lng = "da"
+        Weather.lng = "da"
     elif choice == "German":
-        lng = "de"
+        Weather.lng = "de"
     elif choice == "French":
-        lng = "fr"
+        Weather.lng = "fr"
     elif choice == "Persian":
-        lng = "fa"
+        Weather.lng = "fa"
     elif choice == "Indonesian":
-        lng = "id"
+        Weather.lng = "id"
     elif choice == "Italian":
-        lng = "it"
+        Weather.lng = "it"
     elif choice == "Norwegian Bokmål":
-        lng = "nb"
+        Weather.lng = "nb"
     elif choice == "Dutch":
-        lng = "nl"
+        Weather.lng = "nl"
     elif choice == "Russian":
-        lng = "ru"
+        Weather.lng = "ru"
     elif choice == None:  # if nothing it's english
-        lng = "en"
+        Weather.lng = "en"
     else:
-        lng = "en"  # Default is english
+        Weather.lng = "en"  # Default is english
 
     location()
 
