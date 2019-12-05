@@ -10,6 +10,7 @@ import wget
 from easygui import *  # sudo pip3 install pillow if needed and easygui
 import unidecode  # sudo pip3 install unidecode
 import os
+import logging
 
 # Weather result
 
@@ -24,6 +25,14 @@ class Weather:
         self.image = "meteo.png"
 
 
+logging.basicConfig(
+    filename="weather.log",
+    level=logging.DEBUG,
+    format="%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+
+
 def weather():
     if Weather.city == None:  # if nothing the default city is Bern
         Weather.city = "Bern"
@@ -32,6 +41,7 @@ def weather():
     Weather.unaccent_city = unidecode.unidecode(
         Weather.city
     )  # remove accent and all non-ascii characters
+    logging.info(Weather.city)
     Weather.url = (
         ("http://wttr.in/")
         + str(Weather.unaccent_city)
@@ -39,8 +49,12 @@ def weather():
         + str(Weather.lng)
         + str(".png")
     )
-    filename = wget.download(Weather.url, out="meteo.png")
-
+    try:
+        filename = wget.download(Weather.url, out="meteo.png")
+        logging.info("Server online OK")
+    except:
+        logging.critical("No answer from the server")
+    logging.info(filename)
     Weather.image = "meteo.png"
     msg = "This is the weather report for this location"
     choices = ["Change city"]

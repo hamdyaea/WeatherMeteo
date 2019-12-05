@@ -1,0 +1,10 @@
+2019-12-05 19:13:53.826 INFO meteo - weather: Arconciel
+2019-12-05 19:13:55.502 INFO meteo - weather: Server online OK
+2019-12-05 19:13:55.502 INFO meteo - weather: meteo.png
+2019-12-05 19:13:55.576 DEBUG PngImagePlugin - call: STREAM b'IHDR' 16 13
+2019-12-05 19:13:55.576 DEBUG PngImagePlugin - call: STREAM b'IDAT' 41 46031
+2019-12-05 19:14:10.880 INFO meteo - weather: Bern
+2019-12-05 19:14:11.989 INFO meteo - weather: Server online OK
+2019-12-05 19:14:11.989 INFO meteo - weather: meteo.png
+2019-12-05 19:14:12.036 DEBUG PngImagePlugin - call: STREAM b'IHDR' 16 13
+2019-12-05 19:14:12.037 DEBUG PngImagePlugin - call: STREAM b'IDAT' 41 47068
