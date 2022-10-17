@@ -1,0 +1,3 @@
+To install the neede library :
+
+pip install -r requirements.txt

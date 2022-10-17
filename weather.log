@@ -8,3 +8,31 @@
 2019-12-05 19:14:11.989 INFO meteo - weather: meteo.png
 2019-12-05 19:14:12.036 DEBUG PngImagePlugin - call: STREAM b'IHDR' 16 13
 2019-12-05 19:14:12.037 DEBUG PngImagePlugin - call: STREAM b'IDAT' 41 47068
+2021-11-23 09:32:00.155 INFO meteo - weather: Bern
+2021-11-23 09:32:01.853 INFO meteo - weather: Server online OK
+2021-11-23 09:32:01.853 INFO meteo - weather: meteo.png
+2021-11-23 09:32:01.900 DEBUG PngImagePlugin - call: STREAM b'IHDR' 16 13
+2021-11-23 09:32:01.900 DEBUG PngImagePlugin - call: STREAM b'IDAT' 41 52242
+2021-11-23 09:32:55.373 INFO meteo - weather: Bern
+2021-11-23 09:32:55.593 INFO meteo - weather: Server online OK
+2021-11-23 09:32:55.593 INFO meteo - weather: meteo.png
+2021-11-23 09:32:55.645 DEBUG PngImagePlugin - call: STREAM b'IHDR' 16 13
+2021-11-23 09:32:55.645 DEBUG PngImagePlugin - call: STREAM b'IDAT' 41 52242
+2021-11-23 09:34:27.011 INFO meteo - weather: Bern
+2021-11-23 09:34:29.104 INFO meteo - weather: Server online OK
+2021-11-23 09:34:29.104 INFO meteo - weather: meteo.png
+2021-11-23 09:34:29.159 DEBUG PngImagePlugin - call: STREAM b'IHDR' 16 13
+2021-11-23 09:34:29.159 DEBUG PngImagePlugin - call: STREAM b'IDAT' 41 51899
+2022-09-21 15:29:10.639 INFO meteo - weather: Bern
+2022-09-21 15:29:11.859 INFO meteo - weather: Server online OK
+2022-09-21 15:29:11.859 INFO meteo - weather: meteo.png
+2022-09-21 15:29:11.919 DEBUG PngImagePlugin - call: STREAM b'IHDR' 16 13
+2022-09-21 15:29:11.919 DEBUG PngImagePlugin - call: STREAM b'IDAT' 41 46950
+2022-09-21 15:32:07.221 INFO meteo - weather: Fribourg
+2022-09-21 15:32:09.321 INFO meteo - weather: Server online OK
+2022-09-21 15:32:09.321 INFO meteo - weather: meteo.png
+2022-09-22 09:53:08.448 INFO meteo - weather: Bern
+2022-09-22 09:53:10.093 INFO meteo - weather: Server online OK
+2022-09-22 09:53:10.093 INFO meteo - weather: meteo.png
+2022-09-22 09:53:10.144 DEBUG PngImagePlugin - call: STREAM b'IHDR' 16 13
+2022-09-22 09:53:10.144 DEBUG PngImagePlugin - call: STREAM b'IDAT' 41 47153

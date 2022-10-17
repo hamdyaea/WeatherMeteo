@@ -2,7 +2,8 @@
 
 # Developer : Hamdy Abou El Anein
 
-# This software use wttr.in, look at https://wttr.in/:help for more information about it.
+# This software use wttr.in,
+# look at https://wttr.in/:help for more information about it.
 # you need the easygui and wget library for Python 3.
 
 
@@ -15,6 +16,8 @@ import logging
 # Weather result
 
 # class creation
+
+
 class Weather:
     def __init__(self):
         self.city = "Bern"
@@ -34,7 +37,7 @@ logging.basicConfig(
 
 
 def weather():
-    if Weather.city == None:  # if nothing the default city is Bern
+    if Weather.city is None:  # if nothing the default city is Bern
         Weather.city = "Bern"
     elif Weather.city == "":
         Weather.city = "Bern"
@@ -52,7 +55,8 @@ def weather():
     try:
         filename = wget.download(Weather.url, out="meteo.png")
         logging.info("Server online OK")
-    except:
+    except Exception as e:
+        logginf.critical(e)
         logging.critical("No answer from the server")
     logging.info(filename)
     Weather.image = "meteo.png"
@@ -77,7 +81,7 @@ def location():
     title = "Location"
     default = "Bern"
     Weather.city = enterbox(msg, title, default)
-    if Weather.city == None:  # if nothing the default city is Bern
+    if Weather.city is None:  # if nothing the default city is Bern
         Weather.city == "Bern"
     elif Weather.city == "":
         Weather.city = "Bern"
@@ -123,7 +127,7 @@ def language():
         Weather.lng = "nl"
     elif choice == "Russian":
         Weather.lng = "ru"
-    elif choice == None:  # if nothing it's english
+    elif choice is None:  # if nothing it's english
         Weather.lng = "en"
     else:
         Weather.lng = "en"  # Default is english
