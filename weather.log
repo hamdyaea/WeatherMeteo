@@ -36,3 +36,6 @@
 2022-09-22 09:53:10.093 INFO meteo - weather: meteo.png
 2022-09-22 09:53:10.144 DEBUG PngImagePlugin - call: STREAM b'IHDR' 16 13
 2022-09-22 09:53:10.144 DEBUG PngImagePlugin - call: STREAM b'IDAT' 41 47153
+2022-10-17 21:28:12.952 INFO meteo - weather: Bern
+2022-10-17 21:28:13.827 INFO meteo - weather: Server online OK
+2022-10-17 21:28:13.827 INFO meteo - weather: meteo.png
