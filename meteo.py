@@ -6,6 +6,7 @@
 import argparse
 import json
 import threading
+from pathlib import Path
 import tkinter as tk
 from tkinter import ttk
 from urllib.parse import quote
@@ -47,7 +48,6 @@ class WeatherApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Weather Meteo — Hamdy Abou El Anein")
-        self.geometry("530x420")
         self.minsize(410, 330)
         self.configure(bg="#101827")
         self.city = tk.StringVar(value="Bern")
@@ -58,6 +58,10 @@ class WeatherApp(tk.Tk):
         box.pack(fill="both", expand=True)
         tk.Label(box, text="WEATHER METEO", font=("DejaVu Sans", 16, "bold"),
                  bg="#101827", fg="#8bd6c1").pack(anchor="w")
+        artwork = tk.PhotoImage(file=str(Path(__file__).resolve().parent / "meteo-ui.png"))
+        illustration = tk.Label(box, image=artwork)
+        illustration.image = artwork
+        illustration.pack(anchor="w")
         tk.Label(box, text="Location", bg="#101827", fg="white").pack(anchor="w", pady=(14, 3))
         tk.Entry(box, textvariable=self.city).pack(fill="x")
         ttk.Combobox(box, textvariable=self.language, state="readonly",
